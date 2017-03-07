@@ -5,15 +5,17 @@
 4，小图相应高亮
 5，小图坐标位移
 6，小图片点击替换当前大图
+7，定时器
 */
 
-// 定义 log 函数
+// 定义 log 函数，替代 console.log
 const log = function() {
     console.log.apply(console, arguments)
 }
 
-//定义 removeClassAll
+//定义 removeClassAll 函数
 const removeClassAll = function(className) {
+    //为所有包含这个 class 名的标签删除这个 class
     var selector = '.' + className
     var elements = document.querySelectorAll(selector)
     for (var i = 0; i < elements.length; i++) {
@@ -84,7 +86,7 @@ const last = function() {
     smallMove()
 }
 
-//设置当前小图片高亮
+//定义设置当前小图片高亮函数
 const smallOpacity = function() {
     //找到当前显示的图片
     //先找到当前显示的大图的下标
@@ -98,7 +100,7 @@ const smallOpacity = function() {
     nowSmall.classList.add('opacity')
 }
 
-//小图坐标根据显示位移
+//定义小图坐标根据显示位移函数
 const smallMove = function() {
     //第 3 张时 small_pic 移动 left -130px
     //第 4 张时 small_pic 移动 left -260px
@@ -123,7 +125,7 @@ const smallMove = function() {
     }
 }
 
-//小图片点击替换当前大图
+//定义小图片点击替换当前大图函数
 const clickJump = function() {
     var smallPic = document.querySelector('.small_pic')
     //得到被点击图片的下标
@@ -146,8 +148,22 @@ const clickJump = function() {
     newImgs.classList.add('active')
 }
 
+//定时器，定时执行下一张函数
+var timer = window.setInterval("next()",2000)
 
+// 定义关闭定时器函数
+const closeTimer = function() {
+    window.clearInterval(timer)
+}
 
+//鼠标悬停时关闭定时器,离开时启动定时器
+const timeSwitch = function() {
+    var smallPic = document.querySelector('.small_pic')
+    smallPic.addEventListener('mouseover',closeTimer)
+    smallPic.addEventListener('mouseout',function() {
+        timer = window.setInterval("next()",2000)
+    })
+}
 
 //绑定小图片点击事件
 const bindSmallImgClick = function(event) {
@@ -174,7 +190,7 @@ const bindLast = function(event) {
     lastButton.addEventListener('click', last)
 }
 
-//绑定所有事件集合
+//绑定事件函数集合
 const bindAll = function() {
     //下一张按钮事件
     bindNext()
@@ -186,9 +202,11 @@ const bindAll = function() {
 
 //主函数
 const __mian = function() {
+    //所有绑定事件
     bindAll()
+    //定时器开关
+    timeSwitch()
 }
-
 
 //程序入口
 __mian()

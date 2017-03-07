@@ -1,15 +1,10 @@
-/*隐藏列表前缀*/
-ul {
-    list-style:none;
-}
-
 /*总容器*/
 .container {
     width: 400px;       /*轮播图总宽=大图宽度,高度对于大图加小图加分隔*/
     height: 430px;
     margin: 0 auto;
     position: relative;
-    background-color: black;
+    background-color: #111;
     /*使图片没有间隙*/
     font-size:0;
     line-height:0;
@@ -32,7 +27,7 @@ ul {
     }
 }
 
-/*动画设置*/
+/*大图动画设置*/
 .bigImg {
     animation-name: fadein;             /*动画名称*/
     animation-duration: 0.3s;           /*动画持续时间*/
@@ -40,10 +35,11 @@ ul {
     animation-delay: 0s;                /*延迟时间*/
 }
 
-
 /*大图默认不显示*/
 .bigImg {
     display:none;
+    width: 400px;
+    height: 320px;
 }
 
 /*要显示的图的 class*/
@@ -107,7 +103,7 @@ ul {
     width: 120px;
     height: 94px;
     margin-left: 10px;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 /*小图鼠标悬停高亮*/

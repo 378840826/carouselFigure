@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图(Carousel figure)</title>
+        <link rel="stylesheet" href="carouselFigure.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- 大图 -->
+            <div class="big_pic" data-imgs=5 data-active=0>
+                <img id="id-big-0" class='bigImg active' src="images/1.jpg" alt="1" />
+                <img id="id-big-1" class='bigImg' src="images/2.jpg" alt="2" />
+                <img id="id-big-2" class='bigImg' src="images/3.jpg" alt="3" />
+                <img id="id-big-3" class='bigImg' src="images/4.jpg" alt="4" />
+                <img id="id-big-4" class='bigImg' src="images/5.jpg" alt="5" />
+            </div>
+            <!-- 前后按钮 -->
+            <div class="buttons">
+                <img class="button_last" src="images/left.png" alt="上一张" />
+                <img class="button_next" src="images/right.png" alt="下一张" />
+            </div>
+
+            <!-- 小图 -->
+            <div class="smallContainer">
+                <div class="small_pic">
+                    <img id="id-small-0" class="smallImg opacity" src="images/1.jpg" alt="1" />
+                    <img id="id-small-1" class="smallImg" src="images/2.jpg" alt="2" />
+                    <img id="id-small-2" class="smallImg" src="images/3.jpg" alt="3" />
+                    <img id="id-small-3" class="smallImg" src="images/4.jpg" alt="4" />
+                    <img id="id-small-4" class="smallImg" src="images/5.jpg" alt="5" />
+                </div>
+            </div>
+        </div>
+        <script src='carouselFigure.js'></script>
+    </body>
+</html>

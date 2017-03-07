@@ -1,0 +1,100 @@
+/*隐藏列表前缀*/
+ul {
+    list-style:none;
+}
+
+/*总容器*/
+.container {
+    width: 400px;       /*轮播图总宽=大图宽度,高度对于大图加小图加分隔*/
+    height: 430px;
+    margin: 0 auto;
+    position: relative;
+    background-color: black;
+    /*使图片没有间隙*/
+    font-size:0;
+    line-height:0;
+}
+
+/*大图容器*/
+.big_pic {
+    position: relative;
+    width: 400px;
+    height: 320px;
+}
+
+/*大图淡入淡出动画*/
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0.3;   /*初始状态 不透明度为0*/
+    }
+    100% {
+        opacity: 1;     /*结尾状态 不透明度为1*/
+    }
+}
+
+/*动画设置*/
+.active{
+    -webkit-animation-name: fadein;             /*动画名称*/
+    -webkit-animation-duration: 0.3s;           /*动画持续时间*/
+    -webkit-animation-iteration-count: 1;       /*动画次数*/
+    -webkit-animation-delay: 0s;                /*延迟时间*/
+}
+
+
+/*大图默认不显示*/
+.bigImg {
+    display:none;
+}
+
+/*要显示的图的 class*/
+.active {
+    display: inline-block;
+}
+
+/*上、下按钮*/
+.buttons {
+    width: inherit;
+    height: 60px;
+    position: absolute;
+    top: 60%;
+}
+
+/*下一张按钮*/
+.button_next {
+    position: absolute;
+    right: 0px;
+}
+
+/*小图长条容器*/
+.small_pic {
+    position: relative;
+    width: 650px;
+    height: 94px;
+    overflow: hidden;
+    left: 0px;
+    /*使图片没有间隙*/
+    font-size:0;
+    line-height:0;
+    /*小图移动过渡动画*/
+    transition: left 0.5s;
+}
+
+/*小图容器*/
+.smallContainer {
+    position: relative;
+    top: 7px;
+    overflow: hidden;
+}
+
+/*小图*/
+.smallImg {
+    width: 120px;
+    height: 94px;
+    margin-left: 10px;
+    opacity: 0.2;
+}
+
+/*高亮*/
+.opacity {
+    opacity: 1;
+}

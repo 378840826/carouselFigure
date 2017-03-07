@@ -23,7 +23,7 @@ ul {
 }
 
 /*大图淡入淡出动画*/
-@-webkit-keyframes fadein {
+@keyframes fadein {
     0% {
         opacity: 0.3;   /*初始状态 不透明度为0*/
     }
@@ -33,11 +33,11 @@ ul {
 }
 
 /*动画设置*/
-.active{
-    -webkit-animation-name: fadein;             /*动画名称*/
-    -webkit-animation-duration: 0.3s;           /*动画持续时间*/
-    -webkit-animation-iteration-count: 1;       /*动画次数*/
-    -webkit-animation-delay: 0s;                /*延迟时间*/
+.bigImg {
+    animation-name: fadein;             /*动画名称*/
+    animation-duration: 0.3s;           /*动画持续时间*/
+    animation-iteration-count: 1;       /*动画次数*/
+    animation-delay: 0s;                /*延迟时间*/
 }
 
 
@@ -59,10 +59,26 @@ ul {
     top: 60%;
 }
 
+/*下一张按钮鼠标悬停高亮*/
+.button_next:hover {
+    opacity : 1;
+}
+
+/*上一张按钮鼠标悬停高亮*/
+.button_last:hover {
+    opacity : 1;
+}
+
 /*下一张按钮*/
 .button_next {
     position: absolute;
     right: 0px;
+    opacity : 0.5;
+}
+
+/*上一张按钮*/
+.button_last {
+    opacity : 0.5;
 }
 
 /*小图长条容器*/
@@ -94,7 +110,14 @@ ul {
     opacity: 0.2;
 }
 
-/*高亮*/
+/*小图鼠标悬停高亮*/
+.smallImg:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/*用于小图片高亮*/
 .opacity {
     opacity: 1;
+    transition: opacity 0.5s;
 }

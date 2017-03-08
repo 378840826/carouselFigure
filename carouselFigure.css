@@ -1,7 +1,7 @@
 /*总容器*/
 .container {
     width: 400px;       /*轮播图总宽=大图宽度,高度对于大图加小图加分隔*/
-    height: 430px;
+    height: 306px;
     margin: 0 auto;
     position: relative;
     background-color: #111;
@@ -14,7 +14,7 @@
 .big_pic {
     position: relative;
     width: 400px;
-    height: 320px;
+    height: 225px;
 }
 
 /*大图淡入淡出动画*/
@@ -39,7 +39,7 @@
 .bigImg {
     display:none;
     width: 400px;
-    height: 320px;
+    height: 225px;
 }
 
 /*要显示的图的 class*/
@@ -52,7 +52,7 @@
     width: inherit;
     height: 60px;
     position: absolute;
-    top: 60%;
+    top: 53%;
 }
 
 /*下一张按钮鼠标悬停高亮*/
@@ -81,7 +81,7 @@
 .small_pic {
     position: relative;
     width: 650px;
-    height: 94px;
+    height: 67px;
     overflow: hidden;
     left: 0px;
     /*使图片没有间隙*/
@@ -101,7 +101,7 @@
 /*小图*/
 .smallImg {
     width: 120px;
-    height: 94px;
+    height: 67px;
     margin-left: 10px;
     opacity: 0.4;
 }
